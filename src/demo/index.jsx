@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import WorkFlow, { Background, Controls, Connector } from 'workflow/core';
+import WorkFlow, { Background, Controls, Connector } from '../workflow/core';
 import './style.css';
 
 function CustomNode({ data, id, selected }) {

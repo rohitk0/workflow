@@ -1,21 +1,37 @@
 {
-  "name": "workflow",
-  "version": "0.1.0",
-  "private": true,
+  "name": "work-flow",
+  "version": "0.0.0",
+  "main": "build/index.js",
+  "module": "build/index.es.js",
+  "repository": "git://github.com/myselfrk/workflow.git",
+  "files": [
+    "build"
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "dependencies": {
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.18.6",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "classnames": "^2.3.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "zustand": "^4.1.5"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build": "run() { rollup -c --package=$1; }; run",
+    "clean": "run() { cd src/$1 && rimraf build; }; run",
+    "version-and-publish": "run() { yarn clean $1 && yarn build $1 && version=$(cd src/$1 && npm version --no-git-tag-version $2) && (cd src/$1 && npm publish --registry=https://npm.pkg.github.com/) && git add src/$1 && git commit -m \"$1 - $version\" && git push; }; run",
+    "patch": "run() { yarn version-and-publish $1 patch; }; run",
+    "minor": "run() { yarn version-and-publish $1 minor; }; run",
+    "major": "run() { yarn version-and-publish $1 major; }; run"
   },
   "eslintConfig": {
     "extends": [
