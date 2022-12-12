@@ -1,0 +1,170 @@
+.container {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  position: relative;
+
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+.work-flow-renderer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 4;
+}
+
+.work-flow-viewport {
+  pointer-events: none;
+  z-index: 2;
+}
+
+.work-flow-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.work-flow-edges {
+  z-index: 0;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.work-flow-edge {
+  pointer-events: visibleStroke;
+  cursor: pointer;
+  stroke: #b1b1b7;
+  stroke-width: 1;
+  fill: none;
+}
+
+.work-flow-edge-path {
+  stroke-width: 1;
+}
+
+.work-flow-edge-interaction {
+  stroke-width: 20;
+  opacity: 0;
+}
+
+.selected {
+  stroke: #000000;
+}
+
+.work-flow-nodes {
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: 0 0;
+}
+
+.work-flow-edges_labels {
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.work-flow-edge_label {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px 5px;
+  border-radius: 5px;
+  color: white;
+  background: red;
+}
+
+.work-flow-node {
+  position: absolute;
+  pointer-events: all;
+  border: 1px solid black;
+  border-radius: 5px;
+  background: #eff5f5;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.work-flow-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.grabbable {
+  cursor: move; /* fallback if grab cursor is unsupported */
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+}
+
+/* (Optional) Apply a "closed-hand" cursor during drag operation. */
+.grabbable:active {
+  cursor: grabbing;
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing;
+}
+
+.workflow-zoomer {
+  position: absolute;
+  width: 200px;
+  right: 10px;
+  bottom: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 5px;
+  background: whitesmoke;
+  z-index: 20;
+}
+
+.connector {
+  position: absolute;
+  pointer-events: all;
+  min-width: 6px;
+  min-height: 6px;
+  background: #1a192b;
+  border: 1px solid white;
+  border-radius: 100%;
+  transform: translate(-50%, -50%);
+  cursor: crosshair;
+}
+
+.left {
+  left: 0;
+  top: 50%;
+}
+
+.top {
+  left: 50%;
+  top: 0;
+}
+
+.right {
+  left: 50%;
+  top: 0;
+}
+
+.right {
+  left: 100%;
+  top: 50%;
+}
+
+.bottom {
+  left: 50%;
+  top: 100%;
+}

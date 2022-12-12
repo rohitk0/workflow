@@ -1,0 +1,37 @@
+
+.connector {
+  position: absolute;
+  pointer-events: all;
+  min-width: 6px;
+  min-height: 6px;
+  background: #1a192b;
+  border: 1px solid white;
+  border-radius: 100%;
+  transform: translate(-50%, -50%);
+  cursor: crosshair;
+}
+
+.left {
+  left: 0;
+  top: 50%;
+}
+
+.top {
+  left: 50%;
+  top: 0;
+}
+
+.right {
+  left: 50%;
+  top: 0;
+}
+
+.right {
+  left: 100%;
+  top: 50%;
+}
+
+.bottom {
+  left: 50%;
+  top: 100%;
+}

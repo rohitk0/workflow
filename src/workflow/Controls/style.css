@@ -1,0 +1,23 @@
+.work-flow-controls {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  width: fit-content;
+  height: 32px;
+  background: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  z-index: 100;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 10px;
+}
+
+.work-flow-controls .btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}

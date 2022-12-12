@@ -1,0 +1,34 @@
+.work-flow-edge-path {
+  stroke-width: 1;
+}
+
+.work-flow-edge-interaction {
+  stroke-width: 20;
+  opacity: 0;
+}
+
+.work-flow-edges {
+  z-index: 0;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.work-flow-edge {
+  pointer-events: visibleStroke;
+  cursor: pointer;
+  stroke: #b1b1b7;
+  stroke-width: 1;
+  fill: none;
+}
+
+.selected-edge{
+  stroke: #FB2576;
+}
+
+.new-edge {
+  stroke: #000000;
+}
+
+.dashed {
+  stroke-dasharray: 5;
+}
